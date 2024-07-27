@@ -1,3 +1,11 @@
+const someElement = document.querySelector('.js-some');
+const everyElement = document.querySelector('.js-every');
+const findElement = document.querySelector('.js-find');
+const findIndexElement = document.querySelector('.js-index');
+const showElement = document.querySelector('.js-show');
+
+
+
 const peoples= [
     {
         name : 'Wes',
@@ -32,45 +40,65 @@ const comments = [{
 ]
 
 
-
-/* The some() method is an array method that tests whether at least one element in the array
+someElement.addEventListener('click', () => {
+    /* The some() method is an array method that tests whether at least one element in the array
    passes the test implemented by the provided function
-*/
-const isAdult = peoples.some((people) => {
-    const currentYear = new Date().getFullYear()
-    return currentYear - people.year >= 19
+    */
+    const isAdult = peoples.some((people) => {
+        const currentYear = new Date().getFullYear()
+        return currentYear - people.year >= 19
+    })
+    showElement.textContent = `Is there at least one adult? ${isAdult}`
 })
-console.log(isAdult);
 
 
-/*The every() method tests whether all elements in an array pass the test implemented by the provided function.
-  It returns a Boolean value.
-*/
-const allAdult = peoples.every(people => {
-    const currentYear = new Date().getFullYear()
-    return currentYear - people.year >= 19
+
+
+everyElement.addEventListener("click", () => {
+    /*The every() method tests whether all elements in an array pass the test implemented by the provided function.
+        It returns a Boolean value.
+    */
+    const allAdult = peoples.every(people => {
+        const currentYear = new Date().getFullYear()
+        return currentYear - people.year >= 19
+    })
+    showElement.textContent = `Are all people adults? ${allAdult}`;
 })
-console.log(allAdult);
 
 
 
-/* The find() method returns the first element in an array that satisfies a provided testing function. 
-  If no elements satisfy the testing function, undefined is returned.
-*/
-const comment = comments.find(comment => {
-    return comment.id === 823423
+
+
+
+
+findElement.addEventListener("click", () => {
+    /* The find() method returns the first element in an array that satisfies a provided testing function. 
+        If no elements satisfy the testing function, undefined is returned.
+    */
+    const comment = comments.find(comment => {
+        return comment.id === 823423
+    })
+    showElement.textContent = `Found Comment : ${JSON.stringify(comment)}`
 })
-console.log(comment);
 
 
 
-/* Returns the index of the first element in the array 
-   that satisfies the provided testing function
-*/
-const index = comments.findIndex((comment) => {
-    return comment.id === 823423
+
+
+
+
+findIndexElement.addEventListener("click", () => {
+    /* Returns the index of the first element in the array 
+        that satisfies the provided testing function
+    */
+    const index = comments.findIndex((comment) => {
+        return comment.id === 823423
+    })
+    showElement.textContent = `Index of comment with id 823423: ${index}`
 })
-console.log(index);
+
+
+
 
 
 

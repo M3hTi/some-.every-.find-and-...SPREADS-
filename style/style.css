@@ -1,0 +1,19 @@
+* , *::after , *::before{
+    box-sizing: border-box;
+}
+body{
+   font-family: "Fira Code";
+   font-size: 20px;
+}
+button{
+    cursor: pointer;
+    border: none;
+    padding: 10px 6px;
+    font-weight: bold;
+    background-color: rgb(67, 136, 197);
+    color: white;
+    transition: all 0.7s ease-out;
+}
+button:is(:hover){
+    background-color: rgb(27, 40, 161);
+}
