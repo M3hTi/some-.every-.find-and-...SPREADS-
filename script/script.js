@@ -91,7 +91,7 @@ const displayPeoples = function () {
         `).join(' ')
     document.querySelector('.show-peoples').innerHTML = html
 }
-// window.onload = displayPeoples;
+
 
 
 
@@ -104,7 +104,20 @@ const displayComments = function () {
     ).join(' ')
     document.querySelector('.show-comments').innerHTML = html
 }
-// window.onload = displayComments;
+
+
+// Function to display both peoples and comments
+const displayAll = function () {
+    displayPeoples();
+    displayComments();
+}
+
+// Call displayAll when the window loads
+window.onload = displayAll;
+
+
+
+
 
 
 
